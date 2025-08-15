@@ -12,31 +12,18 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #141414;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
       font-family: 'Arial', sans-serif;
       color: #fff; /* Set the text color to white */
+      background-image: url('https://i.ibb.co/27MmLJkv/1730.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
 
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    .box {
-      width: 300px;
-      height: 330px;
-      padding: 20px;
-      position: relative;
-      text-align: center;
-      background-color: #a20000; /* Update background color */
-      border-radius: 10px;
-      transform: perspective(1000px) rotateY(0deg);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-      position: relative;
     }
 
     #text {
@@ -145,12 +132,12 @@
         <div id="text">
           <i class="fa fa-user"></i>
           <p>
-            <h3 class="centered-text">Link Robin with phone number</h3>
+            <h3 class="centered-text">Link HASA-MD with phone number</h3>
             <br>
-            <h6>🔢 Enter your number with country code. ROBIN WEB PAIR</h6>
+            <h6>🔢 Enter your number with country code. HASA-MD WEB PAIR</h6>
             <div class="input-container">
-              <input placeholder="+94704xxxxxx" type="number" id="number" placeholder="❗ Enter your phone number with country code, ROBIN WEB PAIR" name="">
-              <button id="submit">Submit ROBIN</button>
+              <input placeholder="+9477xxxxxxx" type="number" id="number" placeholder="❗ Enter your phone number with country code, ROBIN WEB PAIR" name="">
+              <button id="submit">Submit number</button>
             </div>
             <!-- Add the loading spinner -->
             <div id="loading-spinner">
@@ -178,7 +165,7 @@
       let text = document.getElementById("copy").innerText;
       let obj = document.getElementById("copy");
       await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
-      obj.innerText = "✔️ COPIED";
+      obj.innerText = "✔ COPIED";
       obj.style = "color:blue;font-weight:bold";
       obj.size = "5";
       setTimeout(() => {
@@ -215,7 +202,7 @@
         // Show the loading spinner
         document.getElementById("loading-spinner").style.display = "block";
         a.innerHTML = ''; // Clear the previous content
-        let { data } = await axios(`/code?number=${bc}`);
+        let { data } = await axios(/code?number=${bc});
         let code = data.code || "❗ Service Unavailable";
         a.innerHTML = '<font id="copy" onclick="Copy()" style="color:blue;font-weight:bold" size="5">CODE: <span style="color:black;font-weight:bold">' + code + '</span></font><br><br><br>';
         // Hide the loading spinner when the process is complete
